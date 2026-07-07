@@ -1,0 +1,16 @@
+/* 自定义样式：让正文更适合中文阅读 */
+
+:root {
+  --md-text-font: "Noto Sans SC", -apple-system, "PingFang SC", sans-serif;
+}
+
+/* 正文行高稍微放大，中文阅读更舒适 */
+.md-typeset {
+  line-height: 1.75;
+}
+
+/* 行间数学公式可横向滚动，避免长公式溢出 */
+.md-typeset .arithmatex {
+  overflow-x: auto;
+  overflow-y: hidden;
+}

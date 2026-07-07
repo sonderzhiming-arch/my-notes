@@ -1,0 +1,119 @@
+# ============================================================
+# 站点基本信息
+# ============================================================
+site_name: 张志明的学习笔记
+site_description: 计算机与深度学习课程笔记
+site_author: 张志明
+# 部署到 GitHub Pages 后请把下面两行改成你自己的仓库信息
+site_url: https://your-username.github.io/my-notes/
+repo_url: https://github.com/your-username/my-notes
+repo_name: your-username/my-notes
+
+# 站点语言：中文
+theme:
+  name: material
+  language: zh
+  # ----------------------------------------------------------
+  # 深色 / 浅色模式切换，主色调为蓝色
+  # ----------------------------------------------------------
+  palette:
+    # 浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  features:
+    - navigation.sections      # 左侧导航分区
+    - navigation.top           # 返回顶部按钮
+    - navigation.tracking      # URL 随滚动更新到当前章节
+    - navigation.indexes       # 允许分区带索引页
+    - search.suggest           # 搜索建议
+    - search.highlight         # 搜索结果高亮
+    - content.code.copy        # 代码块一键复制
+    - toc.follow               # 右侧目录跟随滚动
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+
+# ============================================================
+# 插件
+# ============================================================
+plugins:
+  - search:
+      lang:
+        - zh          # 中文分词搜索
+        - en
+
+# ============================================================
+# Markdown 扩展
+# ============================================================
+markdown_extensions:
+  # 提示框 admonition（!!! note / warning / tip ...）
+  - admonition
+  - pymdownx.details          # 可折叠提示框
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true         # 标题旁生成锚点链接
+  # 代码高亮
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:     # 代码块 / 嵌套围栏
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  # LaTeX 数学公式（配合 MathJax）
+  - pymdownx.arithmatex:
+      generic: true
+
+# ============================================================
+# MathJax 支持 LaTeX 数学公式
+# ============================================================
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+# ============================================================
+# 导航结构
+# ============================================================
+nav:
+  - 首页: index.md
+  - 计算机组成原理:
+      - computer-organization/index.md
+      - RISC-V 指令编码: computer-organization/riscv-encoding.md
+      - 数据通路与流水线: computer-organization/datapath-pipeline.md
+  - 数字电路:
+      - digital-circuits/index.md
+      - 组合逻辑: digital-circuits/combinational.md
+      - 时序逻辑与状态机: digital-circuits/sequential-fsm.md
+  - 数据结构与算法:
+      - data-structures/index.md
+      - 排序算法: data-structures/sorting.md
+  - 深度学习:
+      - deep-learning/index.md
+      - PyTorch 入门: deep-learning/pytorch-basics.md
+      - Transformer 架构: deep-learning/transformer.md
