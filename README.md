@@ -1,4 +1,4 @@
-# 张志明的学习笔记
+# Sonder的学习笔记
 
 基于 [MkDocs](https://www.mkdocs.org/) + [Material](https://squidfunk.github.io/mkdocs-material/) 主题的个人学习笔记站点。
 
