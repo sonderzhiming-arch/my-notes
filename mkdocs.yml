@@ -5,9 +5,9 @@ site_name: 张志明的学习笔记
 site_description: 计算机与深度学习课程笔记
 site_author: 张志明
 # 部署到 GitHub Pages 后请把下面两行改成你自己的仓库信息
-site_url: https://your-username.github.io/my-notes/
-repo_url: https://github.com/your-username/my-notes
-repo_name: your-username/my-notes
+site_url: https://sonderzhiming-arch.github.io/my-notes/
+repo_url: https://github.com/sonderzhiming-arch/my-notes
+repo_name: sonderzhiming-arch/my-notes
 
 # 站点语言：中文
 theme:
