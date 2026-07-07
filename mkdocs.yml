@@ -101,18 +101,40 @@ extra_css:
 # ============================================================
 nav:
   - 首页: index.md
-  - 计算机组成原理:
-      - computer-organization/index.md
-      - RISC-V 指令编码: computer-organization/riscv-encoding.md
-      - 数据通路与流水线: computer-organization/datapath-pipeline.md
-  - 数字电路:
-      - digital-circuits/index.md
-      - 组合逻辑: digital-circuits/combinational.md
-      - 时序逻辑与状态机: digital-circuits/sequential-fsm.md
-  - 数据结构与算法:
-      - data-structures/index.md
-      - 排序算法: data-structures/sorting.md
-  - 深度学习:
-      - deep-learning/index.md
-      - PyTorch 入门: deep-learning/pytorch-basics.md
-      - Transformer 架构: deep-learning/transformer.md
+  - 大学物理乙 I:
+      - physics/index.md
+      - 课件 PPT: physics/slides.md
+      - 复习讲义: physics/notes.md
+      - 小测: physics/quiz.md
+      - 期末复习: physics/final-review.md
+      - 期末真题: physics/final-exams.md
+  - 微积分（甲）Ⅱ:
+      - calculus/index.md
+      - 课件 PPT: calculus/slides.md
+      - 讲义: calculus/notes.md
+      - 习题解答: calculus/exercises.md
+      - 期中: calculus/midterm.md
+      - 期末: calculus/final.md
+  - 数据结构基础:
+      - data-structure/index.md
+      - 课件 PPT: data-structure/slides.md
+      - 讲义: data-structure/notes.md
+      - 期中复习: data-structure/midterm.md
+      - 期中真题: data-structure/midterm-exams.md
+      - 期末真题: data-structure/final-exams.md
+      - 课程要求: data-structure/syllabus.md
+  - 离散数学及其应用:
+      - discrete-math/index.md
+      - 课件 PPT: discrete-math/slides.md
+      - 复习讲义: discrete-math/notes.md
+      - 历年卷: discrete-math/past-papers.md
+      - 期中: discrete-math/midterm.md
+      - 期末复习: discrete-math/final-review.md
+      - 朋辈辅导: discrete-math/peer.md
+  - 计算机系统 I:
+      - computer-system/index.md
+      - 课件 PPT: computer-system/slides.md
+      - 讲义: computer-system/notes.md
+      - 期末复习讲义: computer-system/final-review-notes.md
+      - 期末资料: computer-system/final.md
+      - 教材: computer-system/textbook.md

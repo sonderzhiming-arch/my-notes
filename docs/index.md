@@ -1,46 +1,51 @@
 # 张志明的学习笔记
 
-欢迎来到我的个人学习笔记站点 :material-notebook-outline:
+欢迎来到我的课程资料库 :material-notebook-outline:
 
-这里整理了我在大学课程中的学习记录，涵盖计算机底层原理与深度学习。
+这里按学期整理了各门课程的**复习讲义、期中期末真题、小测、课件 PPT、习题解答与教材**，方便随时查阅复习。
 
-## 课程目录
+## 大一下
 
 <div class="grid cards" markdown>
 
-- :material-chip: __计算机组成原理__
+- :material-atom: __大学物理乙 I__
 
-    RISC-V 指令编码、数据通路、流水线
+    复习讲义 · 小测 · 期末复习 · 期末真题 · PPT
 
-    [:octicons-arrow-right-24: 开始阅读](computer-organization/index.md)
+    [:octicons-arrow-right-24: 进入](physics/index.md)
 
-- :material-sine-wave: __数字电路__
+- :material-function-variant: __微积分（甲）Ⅱ__
 
-    组合逻辑、时序逻辑、状态机
+    讲义 · 习题解答 · 期中 · 期末 · PPT
 
-    [:octicons-arrow-right-24: 开始阅读](digital-circuits/index.md)
+    [:octicons-arrow-right-24: 进入](calculus/index.md)
 
-- :material-graph-outline: __数据结构与算法__
+- :material-graph: __数据结构基础__
 
-    排序、查找、图论与复杂度分析
+    讲义 · 期中/期末真题 · 课程要求 · PPT
 
-    [:octicons-arrow-right-24: 开始阅读](data-structures/index.md)
+    [:octicons-arrow-right-24: 进入](data-structure/index.md)
 
-- :material-brain: __深度学习__
+- :material-set-all: __离散数学及其应用__
 
-    PyTorch、Transformer 与训练技巧
+    复习讲义 · 历年卷 · 期中 · 期末复习 · 朋辈辅导 · PPT
 
-    [:octicons-arrow-right-24: 开始阅读](deep-learning/index.md)
+    [:octicons-arrow-right-24: 进入](discrete-math/index.md)
+
+- :material-chip: __计算机系统 I__
+
+    讲义 · 期末复习 · 期末资料 · 教材 · PPT
+
+    [:octicons-arrow-right-24: 进入](computer-system/index.md)
 
 </div>
 
-## 关于本站
+## 使用说明
 
-本站基于 [MkDocs](https://www.mkdocs.org/) + [Material](https://squidfunk.github.io/mkdocs-material/) 主题构建，支持：
+!!! tip "如何查看资料"
+    - 📄 **PDF** —— 点击可在浏览器内直接在线预览
+    - 📊 **PPT** / 📝 **Word** —— 点击后下载到本地打开
+    - 🌐 **网页** —— 部分真题为网页存档，点击直接查看
 
-- LaTeX 数学公式渲染
-- 代码高亮与一键复制
-- 全文搜索、深色模式
-
-!!! tip "如何写新笔记"
-    在 `docs/` 对应分类目录下新建 `.md` 文件，然后在 `mkdocs.yml` 的 `nav` 中登记即可。
+!!! note "资料范围"
+    仅收录讲义、真题、小测、课件、习题、教材等**复习向**资料；实验代码、课程 Project 未纳入。

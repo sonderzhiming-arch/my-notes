@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据结构基础 2024-2025 期末试卷（重刷版）</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+  body{font-family:-apple-system,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+       max-width:820px;margin:0 auto;padding:32px 24px 80px;color:#1a1a1a;line-height:1.7;font-size:16px;}
+  h1{font-size:24px;text-align:center;margin-bottom:4px;}
+  .subtitle{text-align:center;color:#666;font-size:14px;margin-bottom:28px;}
+  h2{font-size:19px;border-bottom:2px solid #333;padding-bottom:6px;margin-top:42px;}
+  .q{margin:24px 0;padding-bottom:18px;border-bottom:1px solid #eee;}
+  .qno{font-weight:600;color:#333;}
+  .pts{color:#999;font-size:13px;font-weight:400;margin-left:8px;}
+  .stem{margin:8px 0;}
+  .opts{margin:8px 0 0 4px;}
+  .opt{margin:5px 0;display:flex;align-items:flex-start;}
+  .opt .mark{display:inline-block;width:20px;height:20px;border:1.5px solid #888;border-radius:50%;
+             margin-right:10px;flex-shrink:0;margin-top:2px;}
+  .tf{margin:8px 0 0 4px;}
+  .tf span{margin-right:48px;}
+  .tf .mark{display:inline-block;width:18px;height:18px;border:1.5px solid #888;border-radius:50%;
+            vertical-align:middle;margin-right:8px;}
+  img{max-width:100%;display:block;margin:14px auto;}
+  pre{background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;padding:14px 16px;
+      overflow-x:auto;font-family:"SF Mono",Consolas,Monaco,monospace;font-size:13.5px;line-height:1.5;}
+  .blank{display:inline-block;min-width:160px;border-bottom:1.5px solid #333;
+         height:1.2em;vertical-align:bottom;margin:0 4px;}
+  code{background:#f0f0f0;padding:1px 5px;border-radius:4px;font-size:90%;}
+  .note{color:#555;font-size:14px;}
+  @media print{ a{display:none;} body{padding:0 8px;} .q{break-inside:avoid;} }
+</style>
+</head>
+<body>
+
+<h1>浙江大学《数据结构基础》期末考试试卷</h1>
+<div class="subtitle">2024-2025 学年春夏学期 · 重刷版（已去除答案）</div>
+
+<!-- ================= 判断题 ================= -->
+<h2>一、判断题（每题 2 分，共 10 题）</h2>
+
+<div class="q">
+  <div class="qno">R1-1 <span class="pts">2 分</span></div>
+  <div class="stem">To find a minimum spanning tree in a dense graph, Prim's algorithm is more suitable than Kruskal's.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-2 <span class="pts">2 分</span></div>
+  <div class="stem">In an undirected graph, a vertex $v$ is an articulation point iff there exists a pair of vertices $u$ and $w$ (both different from $v$) so that every path between $u$ and $w$ passes through $v$.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-3 <span class="pts">2 分</span></div>
+  <div class="stem">Given a min-heap with unique keys, if $i &lt; j$, then the element $p$ in level $i$ must be smaller than $q$ in level $j$.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-4 <span class="pts">2 分</span></div>
+  <div class="stem">Suppose that each single node in a disjoint set initially has height 0, the height of the resulting disjoint-set tree formed by performing union-by-height on $n$ nodes may exceed $\lfloor \log_2 n \rfloor$.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-5 <span class="pts">2 分</span></div>
+  <div class="stem">If quadratic probing is used in hashing, then a new element can always be inserted if the hash table is at least half empty.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-6 <span class="pts">2 分</span></div>
+  <div class="stem">After performing one pass of radix sort on {11, 56, 25, 61, 79, 27, 51}, the result could be {11, 25, 27, 51, 56, 61, 79}.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-7 <span class="pts">2 分</span></div>
+  <div class="stem">During the insertion sort process, the order of magnitude of the number of comparisons is independent of the initial state of the sequence.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-8 <span class="pts">2 分</span></div>
+  <div class="stem">$114514^N = O(N!)$</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-9 <span class="pts">2 分</span></div>
+  <div class="stem">If a complete binary tree has n+1 nodes in the last level and n nodes in the second last level, then the total number of nodes in the tree must be 3n.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<div class="q">
+  <div class="qno">R1-10 <span class="pts">2 分</span></div>
+  <div class="stem">If the five integers {1,2,3,4,5} are inserted into an initially empty binary search tree in any order starting with 3, the resulting trees will all have the same height.</div>
+  <div class="tf"><span><span class="mark"></span>T</span><span><span class="mark"></span>F</span></div>
+</div>
+
+<!-- ================= 单选题 ================= -->
+<h2>二、单选题（每题 3 分，共 20 题）</h2>
+
+<div class="q">
+  <div class="qno">R2-1 <span class="pts">3 分</span></div>
+  <div class="stem">Given a tree of degree 3, if there are 49 nodes of degree 2, and 25 nodes of degree 3, then how many leaf nodes are there?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 101</div>
+    <div class="opt"><span class="mark"></span>B. 100</div>
+    <div class="opt"><span class="mark"></span>C. 150</div>
+    <div class="opt"><span class="mark"></span>D. 50</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-2 <span class="pts">3 分</span></div>
+  <div class="stem">Which of the following statements is correct regarding a binary search tree storing unique integers?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. The integers 8 and 9 may be at the same level.</div>
+    <div class="opt"><span class="mark"></span>B. If 8 and 10 are at the same level, then 9 must be their parent node.</div>
+    <div class="opt"><span class="mark"></span>C. If 8 and 10 are at the same level, then 9 must not be their parent node.</div>
+    <div class="opt"><span class="mark"></span>D. None.</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-3 <span class="pts">3 分</span></div>
+  <div class="stem">For a binary tree, if its post-order travel sequence is { 1, 3, 2, 6, 5, 7, 4 }, and its in-order travel sequence is { 1, 2, 3, 4, 5, 6, 7 }, then which of the following statement is TRUE?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. This is a complete binary tree.</div>
+    <div class="opt"><span class="mark"></span>B. 6 is the parent of 5.</div>
+    <div class="opt"><span class="mark"></span>C. This is a binary search tree.</div>
+    <div class="opt"><span class="mark"></span>D. 3 is the parent of 2.</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-4 <span class="pts">3 分</span></div>
+  <div class="stem">In a doubly linked circular list, how many pointers must be updated to insert $q$ after $p$?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 1</div>
+    <div class="opt"><span class="mark"></span>B. 2</div>
+    <div class="opt"><span class="mark"></span>C. 3</div>
+    <div class="opt"><span class="mark"></span>D. 4</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-5 <span class="pts">3 分</span></div>
+  <div class="stem">Design an algorithm to determine whether the parentheses () in an expression are properly matched. Which data structure is the most suitable for this task?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. Sequentially stored linear list</div>
+    <div class="opt"><span class="mark"></span>B. Queue</div>
+    <div class="opt"><span class="mark"></span>C. Stack</div>
+    <div class="opt"><span class="mark"></span>D. Heap</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-6 <span class="pts">3 分</span></div>
+  <div class="stem">Suppose that the level-order traversal sequence of a min-heap is { 5, 18, 29, 23, 64, 47, 36}. After calling DeleteMin twice, what will be the post-order traversal of the resulting heap after it has been adjusted?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 47, 36, 64, 23, 29</div>
+    <div class="opt"><span class="mark"></span>B. 47, 64, 36, 23, 29</div>
+    <div class="opt"><span class="mark"></span>C. 47, 64, 29, 36, 23</div>
+    <div class="opt"><span class="mark"></span>D. 47, 64, 36, 29, 23</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-7 <span class="pts">3 分</span></div>
+  <div class="stem">It is known that a 3-heap is a heap whose nodes have 3 children. In a min-3-heap with 2025 elements, which one of the following indices is NOT a possible position for the maximum key?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 675</div>
+    <div class="opt"><span class="mark"></span>B. 676</div>
+    <div class="opt"><span class="mark"></span>C. 1012</div>
+    <div class="opt"><span class="mark"></span>D. 1013</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-8 <span class="pts">3 分</span></div>
+  <div class="stem">For an in-order threaded binary tree, if the post-order and in-order traversal sequences are FDEBGCA and FDBEACG, respectively. Which pair of nodes' left links are both threads?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. E and G.</div>
+    <div class="opt"><span class="mark"></span>B. B and G.</div>
+    <div class="opt"><span class="mark"></span>C. C and D.</div>
+    <div class="opt"><span class="mark"></span>D. D and E.</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-9 <span class="pts">3 分</span></div>
+  <div class="stem">Consider the following operations performed on an initially empty Binary Search Tree (BST):<br>
+  Insert: 50, 30, 70, 20, 40, 60, 80<br>
+  Delete: 50 (replaced with its in-order successor)<br>
+  Insert: 55<br>
+  After these operations, which node will be the in-order predecessor of 60 in the final BST?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 30.</div>
+    <div class="opt"><span class="mark"></span>B. 40.</div>
+    <div class="opt"><span class="mark"></span>C. 55.</div>
+    <div class="opt"><span class="mark"></span>D. The in-order predecessor does not exist for 60.</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-10 <span class="pts">3 分</span></div>
+  <div class="stem">The array representation of the disjoint sets is given by { 3, 3, 4, 7, 4, -3, -6, 6, 8, -2, 10 }. Keep in mind that the elements are numbered from 1 to 11, and the depth of the root is 0. After invoking <code>Union(Find(9), Find(11))</code>, <code>Union(Find(11), Find(3))</code> with union-by-size and path compression, what is the maximum depth of all the nodes?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 1</div>
+    <div class="opt"><span class="mark"></span>B. 2</div>
+    <div class="opt"><span class="mark"></span>C. 3</div>
+    <div class="opt"><span class="mark"></span>D. 4</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-11 <span class="pts">3 分</span></div>
+  <div class="stem">Which of the following statements about hashing is incorrect?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. In hashing with quadratic probing to resolve collisions, a new element can definitely be inserted if the table size is 14 and 7 cells are occupied.</div>
+    <div class="opt"><span class="mark"></span>B. If an insertion into the hash table fails, rehashing is necessary, and the new table size is about twice the original size.</div>
+    <div class="opt"><span class="mark"></span>C. If in double hashing $\mathrm{Hash}_2(k) = k^2$, then double hashing effectively becomes quadratic probing.</div>
+    <div class="opt"><span class="mark"></span>D. the expected number of probes for insertions is equal to unsuccessful searches in linear probing method.</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-12 <span class="pts">3 分</span></div>
+  <div class="stem">Insert {26,30,13,17,40,21,22,10} one by one into an initially empty hash table of size 11 with the hash function $H(Key) = Key \% 11$, and linear probing is used to resolve collisions. After Insertion, what is the expected number of probes for an unsuccessful search?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. $\dfrac{28}{11}$</div>
+    <div class="opt"><span class="mark"></span>B. $\dfrac{25}{11}$</div>
+    <div class="opt"><span class="mark"></span>C. $\dfrac{27}{11}$</div>
+    <div class="opt"><span class="mark"></span>D. $\dfrac{24}{11}$</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-13 <span class="pts">3 分</span></div>
+  <div class="stem">To compute the shortest path in a weighted graph, Dijkstra's algorithm using a min-priority queue is a popular choice. For this algorithm, what is the total time spent on running the relaxation step "decrease the distance of each vertex adjacent from the current visited one"?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. $O(|E|)$</div>
+    <div class="opt"><span class="mark"></span>B. $O(|V| * |E|)$</div>
+    <div class="opt"><span class="mark"></span>C. $O(|V| * \log|V|)$</div>
+    <div class="opt"><span class="mark"></span>D. $O(|E| * \log|V|)$</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-14 <span class="pts">3 分</span></div>
+  <div class="stem">We are executing an algorithm to find the maximum flow of a given network. Currently, we have found several augmenting paths to send 12 flow from $s$ to $t$, and we show the updated residual graph in the following figure.</div>
+  <img src="images/maxflow.png" alt="residual graph">
+  <div class="stem">So what is the maximum flow we can send from $s$ to $t$?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 12</div>
+    <div class="opt"><span class="mark"></span>B. 14</div>
+    <div class="opt"><span class="mark"></span>C. 16</div>
+    <div class="opt"><span class="mark"></span>D. 20</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-15 <span class="pts">3 分</span></div>
+  <div class="stem">Given a weakly-connected <em>directed</em> graph, what condition ensures that an Eulerian Circuit exists?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. All vertices have equal in-degree and out-degree.</div>
+    <div class="opt"><span class="mark"></span>B. Exactly one vertex has out-degree = in-degree + 1, one vertex has in-degree = out-degree + 1, and all the rest vertices have equal in-degree and out-degree.</div>
+    <div class="opt"><span class="mark"></span>C. Exactly two vertices have odd total-degree, and all the rest vertices have even total-degree.</div>
+    <div class="opt"><span class="mark"></span>D. All vertices have even total-degree.</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-16 <span class="pts">3 分</span></div>
+  <div class="stem">How many valid topological sorts does the following graph have?</div>
+  <img src="images/topo.png" alt="DAG">
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 7</div>
+    <div class="opt"><span class="mark"></span>B. 8</div>
+    <div class="opt"><span class="mark"></span>C. 9</div>
+    <div class="opt"><span class="mark"></span>D. 10</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-17 <span class="pts">3 分</span></div>
+  <div class="stem">The following figure illustrates how to contract a subgraph (shown in dashed line) into a vertex.</div>
+  <img src="images/scc.png" alt="SCC contraction">
+  <div class="stem">Now given a directed graph with many <em>strongly connected components</em>, if we contract each component into a single vertex, which property does the resulting graph MUST have?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. a complete graph</div>
+    <div class="opt"><span class="mark"></span>B. a disconnected graph</div>
+    <div class="opt"><span class="mark"></span>C. a directed acyclic graph</div>
+    <div class="opt"><span class="mark"></span>D. a binary tree</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-18 <span class="pts">3 分</span></div>
+  <div class="stem">Using the direct insertion sort algorithm to sort the following four lists in ascending order, the one with the fewest number of comparisons is:</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 67,13,20,55,40,27,6,31</div>
+    <div class="opt"><span class="mark"></span>B. 6,13,27,20,40,31,55,67</div>
+    <div class="opt"><span class="mark"></span>C. 13,20,6,27,31,67,55,40</div>
+    <div class="opt"><span class="mark"></span>D. 55,31,40,27,6,13,67,20</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-19 <span class="pts">3 分</span></div>
+  <div class="stem">Given that the key sequence {7, 9, 14, 19, 25, 20, 16, 21} is a min-heap, after inserting the key 2 and adjusting accordingly, the resulting min-heap is:</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. {2,14,7,9,25,20,16,21,19}</div>
+    <div class="opt"><span class="mark"></span>B. {2,7,14,19,20,16,21,9,25}</div>
+    <div class="opt"><span class="mark"></span>C. {2,9,14,7,20,16,21,25,19}</div>
+    <div class="opt"><span class="mark"></span>D. {2,7,14,9,25,20,16,21,19}</div>
+  </div>
+</div>
+
+<div class="q">
+  <div class="qno">R2-20 <span class="pts">3 分</span></div>
+  <div class="stem">Which of the following options is not a possible result after the second pass of quicksort?</div>
+  <div class="opts">
+    <div class="opt"><span class="mark"></span>A. 3,7,11,9,13,17,19</div>
+    <div class="opt"><span class="mark"></span>B. 3,17,11,13,9,7,19</div>
+    <div class="opt"><span class="mark"></span>C. 7,3,11,9,17,13,19</div>
+    <div class="opt"><span class="mark"></span>D. 9,3,7,11,17,13,19</div>
+  </div>
+</div>
+
+<!-- ================= 程序填空题 ================= -->
+<h2>三、程序填空题（每空 3 分）</h2>
+
+<div class="q">
+  <div class="qno">R5-1 <span class="pts">6 分</span></div>
+  <div class="stem">Given the head of a singly linked list, swap every two adjacent nodes if the value of the first node is greater than the value of the second node and the value of the first node is even. If the number of nodes is odd, the last node remains unchanged. Complete the two blanks in the code below.</div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+struct ListNode {
+    int val;
+    struct ListNode *next;
+};
+struct ListNode* swapIfGreaterAndEven(struct ListNode* head) {
+    struct ListNode dummy;
+    dummy.next = head;
+    struct ListNode *prev = &amp;dummy;
+
+    while (prev-&gt;next != NULL &amp;&amp; prev-&gt;next-&gt;next != NULL) {
+        struct ListNode *first = prev-&gt;next;
+        struct ListNode *second = first-&gt;next;
+
+        if ( <span class="blank"></span> ) {          /* 空 1 (3 分) */
+            first-&gt;next = <span class="blank"></span> ;   /* 空 2 (3 分) */
+            second-&gt;next = first;
+
+            prev-&gt;next = second;
+            prev = first;
+        } else {
+            prev = second;
+        }
+    }
+    return dummy.next;
+}</pre>
+</div>
+
+<div class="q">
+  <div class="qno">R5-2 <span class="pts">6 分</span></div>
+  <div class="stem"><strong>Find the first node with a right child (2)</strong><br>
+  In a binary tree represented as a complete binary tree, find the first node with a right child encountered during an in-order traversal. If no such node exists, return -1; otherwise, return that node's value.</div>
+  <div class="stem">For example: a binary tree stored in this format (as illustrated in the figure) has its root node at array index 1, with missing nodes represented by 0 in the array.</div>
+  <div class="stem">Please complete the function <strong>int FirstHaveRight(int a[], int n)</strong>, where parameter <strong>n</strong> is the index of the last element in array <strong>a</strong> (e.g., <strong>n = 7</strong> in the provided example). All elements after the last element of array <strong>a</strong> are initialized to 0. The algorithm in this function is similar to iterative implementation of in-order traversal.</div>
+  <img src="images/tree.png" alt="binary tree and array">
+<pre>int FirstHaveRight(int a[],int n)
+{   int stack[MAXSIZE];
+    int top=-1, tree=1,treeRight;
+
+    for ( ; ; ) {
+        for ( ; tree&lt;=n; tree = <span class="blank"></span> ){   /* 空 1 (3 分) */
+            if (a[tree]!=0) stack[++top]=tree;
+            else break;
+        }
+        if (top==-1) return -1;
+        else tree = stack[top--];
+        treeRight=2*tree+1;
+        if ( <span class="blank"></span> ) break;   /* 空 2 (3 分) */
+        else tree = treeRight;
+    }
+    return a[tree];
+}</pre>
+</div>
+
+<!-- ================= 函数题 ================= -->
+<h2>四、函数题</h2>
+
+<div class="q">
+  <div class="qno">R6-1 Finding Independent Set <span class="pts">8 分</span></div>
+  <div class="stem">Given a simple undirected graph $G = (V, E)$. An <strong>independent set</strong> of $G$ is a set $S \subseteq V$ such that no two members of $S$ are connected by an edge in $E$. Finding the maximum independent set of $G$ is an NP-hard problem. Here you are supposed to implement a greedy heuristic to find a near-maximum independent set.</div>
+  <div class="stem">The algorithm works in the following way:
+    <ol>
+      <li>Collect any one unvisited vertex $v$ into $S$.</li>
+      <li>Delete all the vertices (and all the edges incident on them) that are adjacent to $v$ from $G$.</li>
+      <li>Repeat steps 1 and 2 until there is no unvisited vertex left in $G$.</li>
+    </ol>
+  </div>
+  <div class="stem">In order to obtain the unique solution, when there are many options in step 1, you must always choose the vertex with the smallest index.</div>
+
+  <div class="stem"><strong>Format of functions:</strong></div>
+<pre>int Independent_Set( MGraph G, int S[] );</pre>
+
+  <div class="stem">Here <code>MGraph</code> is defined as the following:</div>
+<pre>typedef struct GNode *PtrToGNode;
+struct GNode{
+    int Nv;  /* number of vertices */
+    int Ne;  /* number of edges    */
+    int G[MaxVertexNum][MaxVertexNum]; /* adjacency matrix */
+};
+typedef PtrToGNode MGraph;</pre>
+
+  <div class="stem">where <code>MaxVertexNum</code> is a constant defined by the judge.</div>
+  <div class="stem">The indices of the vertices in the resulting independent set is stored in the array <code>int S[]</code>. Note that the vertices are indexed from 1 to the number of vertices <code>Nv</code>. However, the indices of the adjacency matrix <code>G</code> starts from 0.</div>
+  <div class="stem">The function <code>Independent_Set</code> is supposed to follow the above algorithm to produce an independent set, save the results in <code>S</code>, and return the number of vertices in <code>S</code>.</div>
+
+  <div class="stem"><strong>Sample program of judge:</strong></div>
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define MaxVertexNum 1000
+
+typedef struct GNode *PtrToGNode;
+struct GNode{
+    int Nv;  /* number of vertices */
+    int Ne;  /* number of edges    */
+    int G[MaxVertexNum][MaxVertexNum]; /* adjacency matrix */
+};
+typedef PtrToGNode MGraph;
+
+MGraph Build_Graph(); /* implemented by judge */
+int Independent_Set( MGraph G, int S[] );
+
+int main()
+{
+    int i, n, S[MaxVertexNum];
+    MGraph G;
+
+    G = Build_Graph();
+    n = Independent_Set(G, S);
+    printf("%d", S[0]);
+    for (i=1; i&lt;n; i++) printf(" %d", S[i]);
+
+    return 0;
+}
+/* Your function(s) will be put here */</pre>
+
+  <div class="stem"><strong>Sample Input:</strong></div>
+<pre>8 7
+1 5
+5 4
+4 2
+2 3
+3 6
+6 1
+6 2</pre>
+
+  <div class="stem"><strong>Sample Output:</strong></div>
+<pre>1 2 7 8</pre>
+
+  <div class="stem"><strong>Note:</strong> This method can help us find an independent set, but not necessarily a <strong>maximum</strong> independent set. For example, the maximum solution of the sample graph is {1, 3, 4, 7, 8}.</div>
+
+  <div class="note">代码长度限制 16 KB · 时间限制 400 ms · 内存限制 64 MB · 语言 C (gcc)</div>
+  <div class="stem"><strong>你的作答：</strong></div>
+<pre>int Independent_Set( MGraph G, int S[] )
+{
+
+
+
+}</pre>
+</div>
+
+</body>
+</html>
