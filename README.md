@@ -4,6 +4,16 @@
 
 ## 本地预览
 
+第一次使用先创建虚拟环境并安装依赖：
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+之后每次预览：
+
 ```bash
 source venv/bin/activate      # 激活虚拟环境
 mkdocs serve                  # 启动本地服务器

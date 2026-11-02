@@ -42,9 +42,9 @@ theme:
     - search.highlight         # 搜索结果高亮
     - content.code.copy        # 代码块一键复制
     - toc.follow               # 右侧目录跟随滚动
-  font:
-    text: Noto Sans SC
-    code: JetBrains Mono
+  # 不从 Google Fonts 加载字体：国内经常连不上，会卡住页面渲染。
+  # 改用系统自带的中文字体，字体栈见 stylesheets/extra.css
+  font: false
 
 # ============================================================
 # 插件
@@ -82,19 +82,27 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  # 图标短代码，如 :material-atom:、:octicons-arrow-right-24:（首页卡片在用）
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   # LaTeX 数学公式（配合 MathJax）
   - pymdownx.arithmatex:
       generic: true
 
 # ============================================================
 # MathJax 支持 LaTeX 数学公式
+# mathjax.js 只在页面里有公式时才去加载 MathJax（约 1 MB），其余页面不加载
 # ============================================================
 extra_javascript:
   - javascripts/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
   - stylesheets/extra.css
+
+# files/ 里的 Markdown 是资料本身（从各列表页链接过去），不需要出现在左侧导航
+not_in_nav: |
+  /**/files/**/*.md
 
 # ============================================================
 # 导航结构

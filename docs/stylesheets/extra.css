@@ -1,7 +1,11 @@
 /* 自定义样式：让正文更适合中文阅读 */
 
+/* 使用系统自带字体（mkdocs.yml 里 font: false，不再从 Google Fonts 加载）：
+   英文和数字用系统 UI 字体，中文依次回退到苹方、冬青黑体、微软雅黑、思源黑体 */
 :root {
-  --md-text-font: "Noto Sans SC", -apple-system, "PingFang SC", sans-serif;
+  --md-text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  --md-code-font: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 /* 正文行高稍微放大，中文阅读更舒适 */
