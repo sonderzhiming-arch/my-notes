@@ -1,0 +1,753 @@
+/* ============================================================
+   「墨笺」书卷风：配色、字体与细节
+   暖白纸色、墨色文字、朱砂红点缀，标题用宋体；
+   首页课程像一本书的目录，带「温故知新」小印章
+   布局结构在 extra.css，这里只管「长什么样」
+   ============================================================ */
+
+/* ---------- 颜色：浅色（纸） ---------- */
+[data-md-color-scheme="default"] {
+  --sn-bg: #f7f3ea;
+  --sn-surface: #fbf8f1;
+  --sn-border: #e2d9c8;
+  --sn-border-strong: #cdc1aa;
+  --sn-text: #2b2620;
+  --sn-muted: #766b5d;
+  --sn-faint: #a59a8a;
+  --sn-accent: #b03a2a;
+  --sn-hover: #efe8da;
+
+  /* 传统色：靛青、紫棠、松绿、赭石、朱砂 */
+  --c-physics: #2f5d7c;
+  --c-calculus: #6d4b7d;
+  --c-ds: #3b6b55;
+  --c-discrete: #9c5d25;
+  --c-cs: #b03a2a;
+
+  --ft-pdf: #b03a2a;
+  --ft-ppt: #b0652a;
+  --ft-doc: #2f5d7c;
+  --ft-img: #4c7650;
+  --ft-web: #6d4b7d;
+  --ft-md: #366b6b;
+  --ft-file: #8a7f70;
+
+  --md-default-bg-color: var(--sn-bg);
+  --md-default-bg-color--light: rgba(247, 243, 234, 0.7);
+  --md-default-fg-color: rgba(43, 38, 32, 0.9);
+  --md-default-fg-color--light: rgba(43, 38, 32, 0.6);
+  --md-default-fg-color--lighter: rgba(43, 38, 32, 0.32);
+  --md-default-fg-color--lightest: rgba(43, 38, 32, 0.08);
+  --md-primary-fg-color: #2b2620;
+  --md-primary-fg-color--light: #4a4238;
+  --md-primary-fg-color--dark: #1a1612;
+  --md-primary-bg-color: #fbf8f1;
+  --md-primary-bg-color--light: rgba(251, 248, 241, 0.7);
+  --md-accent-fg-color: var(--sn-accent);
+  --md-accent-fg-color--transparent: rgba(176, 58, 42, 0.08);
+  --md-accent-bg-color: #fbf8f1;
+  --md-typeset-color: #332d26;
+  --md-typeset-a-color: #9c3324;
+  --md-typeset-mark-color: rgba(214, 163, 60, 0.3);
+  --md-code-bg-color: #efe8da;
+  --md-code-fg-color: #3d352c;
+  --md-code-hl-keyword-color: #2f5d7c;
+  --md-code-hl-string-color: #4c7650;
+  --md-code-hl-function-color: #6d4b7d;
+  --md-code-hl-number-color: #b03a2a;
+  --md-code-hl-constant-color: #9c5d25;
+  --md-admonition-bg-color: var(--sn-surface);
+  --md-footer-bg-color: var(--sn-bg);
+  --md-footer-bg-color--dark: var(--sn-bg);
+  --md-footer-fg-color: #2b2620;
+  --md-footer-fg-color--light: #766b5d;
+  --md-footer-fg-color--lighter: #a59a8a;
+}
+
+/* ---------- 颜色：深色（夜读） ---------- */
+[data-md-color-scheme="slate"] {
+  --sn-bg: #1b1916;
+  --sn-surface: #221f1b;
+  --sn-border: #36312a;
+  --sn-border-strong: #4a443a;
+  --sn-text: #ece4d5;
+  --sn-muted: #a89d8d;
+  --sn-faint: #7a7064;
+  --sn-accent: #e07b62;
+  --sn-hover: #26231e;
+
+  --c-physics: #86abc8;
+  --c-calculus: #bb9fc9;
+  --c-ds: #8db89f;
+  --c-discrete: #d9a168;
+  --c-cs: #e07b62;
+
+  --ft-pdf: #e07b62;
+  --ft-ppt: #d9a168;
+  --ft-doc: #86abc8;
+  --ft-img: #9cc09a;
+  --ft-web: #bb9fc9;
+  --ft-md: #86bdbd;
+  --ft-file: #a89d8d;
+
+  --md-default-bg-color: var(--sn-bg);
+  --md-default-bg-color--light: rgba(27, 25, 22, 0.7);
+  --md-default-fg-color: rgba(236, 228, 213, 0.88);
+  --md-default-fg-color--light: rgba(236, 228, 213, 0.58);
+  --md-default-fg-color--lighter: rgba(236, 228, 213, 0.3);
+  --md-default-fg-color--lightest: rgba(236, 228, 213, 0.08);
+  --md-primary-fg-color: #ece4d5;
+  --md-primary-fg-color--light: #d4cbbb;
+  --md-primary-fg-color--dark: #ffffff;
+  --md-primary-bg-color: #1b1916;
+  --md-primary-bg-color--light: rgba(27, 25, 22, 0.7);
+  --md-accent-fg-color: var(--sn-accent);
+  --md-accent-fg-color--transparent: rgba(224, 123, 98, 0.1);
+  --md-accent-bg-color: #1b1916;
+  --md-typeset-color: #ddd5c6;
+  --md-typeset-a-color: #e98d74;
+  --md-code-bg-color: #26221d;
+  --md-code-fg-color: #ddd5c6;
+  --md-admonition-bg-color: var(--sn-surface);
+  --md-footer-bg-color: var(--sn-bg);
+  --md-footer-bg-color--dark: var(--sn-bg);
+  --md-footer-fg-color: #ece4d5;
+  --md-footer-fg-color--light: #a89d8d;
+  --md-footer-fg-color--lighter: #7a7064;
+}
+
+/* ---------- 顶栏：与纸同色，下方双线 ---------- */
+.md-header {
+  color: var(--sn-text);
+  background-color: var(--sn-bg);
+  box-shadow: none;
+}
+
+.md-header--shadow {
+  box-shadow: 0 1px 0 var(--sn-border);
+}
+
+.md-header__title {
+  font-family: var(--sn-font-serif);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* 左上角图标做成朱红印章 */
+.md-header__button.md-logo {
+  padding: 0.28rem;
+  margin: 0.3rem 0.3rem 0.3rem 0.4rem;
+  color: #fbf3e6;
+  background: var(--sn-accent);
+  border-radius: 0.15rem;
+  box-shadow: inset 0 0 0 0.1rem rgba(255, 255, 255, 0.22);
+}
+
+.md-header__button.md-logo svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.md-source {
+  color: var(--sn-muted);
+}
+
+@media screen and (min-width: 60em) {
+  .md-search__form {
+    background-color: var(--sn-surface);
+    border: 1px solid var(--sn-border);
+    border-radius: 0.15rem;
+  }
+
+  .md-search__form:hover {
+    border-color: var(--sn-border-strong);
+  }
+
+  .md-search__input::placeholder,
+  .md-search__input + .md-search__icon {
+    color: var(--sn-muted);
+  }
+}
+
+/* ---------- 课程标签栏 ---------- */
+.md-tabs {
+  color: var(--sn-muted);
+  background-color: var(--sn-bg);
+  /* 书页式双线 */
+  box-shadow: 0 1px 0 var(--sn-border-strong), 0 3px 0 var(--sn-bg), 0 4px 0 var(--sn-border);
+}
+
+.md-tabs__link {
+  margin-top: 0.7rem;
+  font-family: var(--sn-font-serif);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  opacity: 1;
+}
+
+.md-tabs__item {
+  position: relative;
+}
+
+.md-tabs__item--active,
+.md-tabs__link:hover {
+  color: var(--sn-text);
+}
+
+.md-tabs__item--active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1.2rem;
+  height: 2px;
+  background: var(--sn-accent);
+  transform: translateX(-50%);
+}
+
+/* ---------- 侧边导航 ---------- */
+.md-nav__link {
+  color: var(--sn-muted);
+}
+
+.md-nav__link:hover,
+.md-nav__link:focus {
+  color: var(--sn-accent);
+}
+
+.md-nav__item .md-nav__link--active,
+.md-nav__item .md-nav__link--active code {
+  color: var(--sn-accent);
+}
+
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav__title {
+  font-family: var(--sn-font-serif);
+  color: var(--sn-text);
+}
+
+/* ---------- 正文排版 ---------- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: var(--sn-font-serif);
+  font-weight: 700;
+  color: var(--sn-text);
+}
+
+.md-typeset h1 {
+  letter-spacing: 0.03em;
+}
+
+/* 页面大标题下一道朱红短线 */
+.md-typeset h1:not(.hero__title)::after {
+  content: "";
+  display: block;
+  width: 2.2rem;
+  height: 3px;
+  margin-top: 0.45em;
+  background: var(--sn-accent);
+}
+
+.md-typeset h2 {
+  padding-bottom: 0.3em;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--sn-border);
+}
+
+.md-typeset h4 {
+  color: var(--sn-muted);
+}
+
+.md-typeset a {
+  text-underline-offset: 0.22em;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+.md-path {
+  font-family: var(--sn-font-serif);
+  font-size: 0.68rem;
+}
+
+.md-path__link {
+  color: var(--sn-muted);
+}
+
+.md-typeset blockquote {
+  color: var(--sn-muted);
+  border-left: 2px solid var(--sn-accent);
+}
+
+.md-typeset .highlight,
+.md-typeset pre > code {
+  border-radius: 0.15rem;
+}
+
+.md-typeset .highlight {
+  border: 1px solid var(--sn-border);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0 0 0 3px;
+  border-radius: 0.15rem;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--sn-border);
+  border-radius: 0.15rem;
+}
+
+.md-typeset table:not([class]) th {
+  font-family: var(--sn-font-serif);
+  background: var(--sn-hover);
+}
+
+.md-typeset kbd {
+  color: var(--sn-muted);
+  background: var(--sn-bg);
+  border: 1px solid var(--sn-border-strong);
+  border-radius: 0.15rem;
+  box-shadow: none;
+}
+
+/* ---------- 首页 Hero：居中的扉页 ---------- */
+.md-typeset .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4rem 0 0;
+  margin-bottom: 2.8rem;
+  text-align: center;
+}
+
+/* 底部渐隐的细线 */
+.md-typeset .hero::after {
+  content: "";
+  align-self: stretch;
+  height: 1px;
+  margin-top: 2.8rem;
+  background: linear-gradient(to right, transparent, var(--sn-border-strong), transparent);
+}
+
+.md-typeset .hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-family: var(--sn-font-serif);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: var(--sn-accent);
+}
+
+.md-typeset .hero__eyebrow::before,
+.md-typeset .hero__eyebrow::after {
+  content: "";
+  width: 2.4rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.md-typeset h1.hero__title {
+  font-family: var(--sn-font-serif);
+  font-size: clamp(2.2em, 6vw, 3.6em);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* 「温故知新」小印章 */
+.md-typeset h1.hero__title::after {
+  content: "温故知新";
+  display: inline-block;
+  box-sizing: content-box;
+  height: 2em;
+  padding: 0.28em 0.22em;
+  margin-left: 0.5em;
+  font-size: 0.24em;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: #fbf3e6;
+  vertical-align: 1.2em;
+  writing-mode: vertical-rl;
+  background: var(--sn-accent);
+  border-radius: 0.15rem;
+  box-shadow: inset 0 0 0 0.12em rgba(255, 255, 255, 0.28);
+  transform: rotate(5deg);
+}
+
+.md-typeset .hero__lead {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 30em;
+}
+
+.md-typeset .hero > p:has(.hero__search) {
+  align-self: stretch;
+  margin: 0;
+}
+
+.md-typeset .hero__search {
+  max-width: 28rem;
+  margin: 2rem auto 0;
+  background: var(--sn-surface);
+  border-radius: 0.15rem;
+}
+
+.md-typeset .hero__search:hover {
+  border-color: var(--sn-accent);
+}
+
+.md-typeset .hero__stats {
+  justify-content: center;
+  gap: 0;
+}
+
+.md-typeset .hero__stats > div {
+  align-items: center;
+  padding: 0 2.2rem;
+  border-left: 1px solid var(--sn-border);
+}
+
+.md-typeset .hero__stats > div:first-child {
+  border-left: 0;
+}
+
+.md-typeset .hero__stats b {
+  font-family: var(--sn-font-serif);
+  font-size: 1.9em;
+  color: var(--sn-text);
+}
+
+/* ---------- 区块标题：居中、加宽字距 ---------- */
+.md-typeset h2#courses,
+.md-typeset h2#guide {
+  margin: 2.2em 0 0.4em;
+  font-size: 1.35em;
+  letter-spacing: 0.3em;
+  text-align: center;
+  border-bottom: 0;
+}
+
+.md-typeset h2#guide {
+  margin-top: 2.6em;
+}
+
+.md-typeset .section-note {
+  margin: 0 0 1.4em;
+  text-align: center;
+  font-family: var(--sn-font-serif);
+  letter-spacing: 0.08em;
+}
+
+/* ---------- 首页课程：像书的目录 ---------- */
+.md-typeset .grid.cards.course-grid {
+  display: block;
+  max-width: 46rem;
+  margin: 0 auto;
+  border-top: 1px solid var(--sn-text);
+}
+
+.md-typeset .grid.cards.course-grid > ul {
+  display: block;
+  counter-reset: course;
+}
+
+.md-typeset .grid.cards.course-grid > ul > li {
+  display: grid;
+  grid-template-columns: 3.4rem 1fr;
+  column-gap: 0.6rem;
+  row-gap: 0.55rem;
+  padding: 1.25rem 0.8rem 1.3rem 0.2rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--sn-border);
+  border-radius: 0;
+  counter-increment: course;
+}
+
+.md-typeset .grid.cards.course-grid > ul > li:last-child {
+  border-bottom-color: var(--sn-text);
+}
+
+.md-typeset .grid.cards.course-grid > ul > li:hover,
+.md-typeset .grid.cards.course-grid > ul > li:focus-within {
+  background: var(--sn-hover);
+  box-shadow: none;
+}
+
+/* 朱红序号 01、02… */
+.md-typeset .grid.cards.course-grid > ul > li::before {
+  content: counter(course, decimal-leading-zero);
+  grid-row: 1 / span 2;
+  font-family: var(--sn-font-serif);
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--sn-accent);
+  font-variant-numeric: lining-nums;
+}
+
+.md-typeset .course-grid li > p:first-child {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.md-typeset .course-grid .course-icon {
+  display: none;
+}
+
+.md-typeset .course-grid .course-title {
+  font-family: var(--sn-font-serif);
+  font-size: 1.3em;
+  letter-spacing: 0.04em;
+}
+
+/* 标题和数量之间的点线 */
+.md-typeset .course-grid li > p:first-child::after {
+  content: "";
+  order: 2;
+  flex: 1;
+  min-width: 2rem;
+  border-bottom: 1px dotted var(--sn-border-strong);
+  transform: translateY(-0.3em);
+}
+
+.md-typeset .course-grid .course-total {
+  order: 3;
+  font-family: var(--sn-font-serif);
+}
+
+.md-typeset .course-grid .course-total b {
+  font-size: 1.2em;
+}
+
+.md-typeset .course-grid li:hover .course-title {
+  color: var(--sn-accent);
+}
+
+.md-typeset .course-chips {
+  gap: 0.2rem 1.3rem;
+}
+
+.md-typeset .course-chips a {
+  padding: 0;
+  font-size: 0.82em;
+  border: 0;
+  border-radius: 0;
+}
+
+.md-typeset .course-chips a b {
+  font-weight: 400;
+  color: var(--sn-faint);
+}
+
+.md-typeset .course-chips a:hover,
+.md-typeset .course-chips a:focus-visible {
+  color: var(--sn-accent);
+  text-decoration: underline;
+}
+
+/* ---------- 课程页分类：同样是目录式 ---------- */
+.md-typeset .grid.cards.cat-grid {
+  display: block;
+  border-top: 1px solid var(--sn-text);
+}
+
+.md-typeset .grid.cards.cat-grid > ul {
+  display: block;
+}
+
+.md-typeset .grid.cards.cat-grid > ul > li {
+  gap: 0.9rem;
+  padding: 0.9rem 0.6rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--sn-border);
+  border-radius: 0;
+}
+
+.md-typeset .grid.cards.cat-grid > ul > li:hover,
+.md-typeset .grid.cards.cat-grid > ul > li:focus-within {
+  background: var(--sn-hover);
+  box-shadow: none;
+}
+
+.md-typeset .cat-grid .cat-icon {
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--course) 45%, transparent);
+  border-radius: 50%;
+}
+
+.md-typeset .cat-grid .cat-icon svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.md-typeset .cat-grid .cat-title {
+  flex: 0 1 auto;
+  font-family: var(--sn-font-serif);
+  font-size: 1.1em;
+  letter-spacing: 0.04em;
+}
+
+.md-typeset .grid.cards.cat-grid > ul > li::after {
+  content: "";
+  order: 3;
+  flex: 1;
+  border-bottom: 1px dotted var(--sn-border-strong);
+}
+
+.md-typeset .cat-grid .cat-count {
+  order: 4;
+  font-family: var(--sn-font-serif);
+}
+
+.md-typeset .grid.cards.cat-grid > ul > li:hover .cat-title {
+  color: var(--sn-accent);
+}
+
+/* ---------- 使用说明 ---------- */
+.md-typeset .grid.tips {
+  max-width: 46rem;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.md-typeset .tips > div {
+  padding: 0.4rem 1.2rem;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--sn-border);
+  border-radius: 0;
+}
+
+.md-typeset .tips > div:first-child {
+  border-left: 0;
+}
+
+.md-typeset .tips .tip-icon {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--sn-accent) 40%, transparent);
+  border-radius: 50%;
+}
+
+.md-typeset .tips strong {
+  font-family: var(--sn-font-serif);
+}
+
+.md-typeset .scope-note {
+  max-width: 46rem;
+  margin: 1.6em auto 0;
+  text-align: center;
+}
+
+/* ---------- 资料列表：账簿式细线，类型像小印戳 ---------- */
+/* 紧跟在说明行后面的列表补一条顶线（h2 自带下划线，不用重复） */
+.md-typeset .page-lead + ul:has(> li > small) {
+  border-top: 1px solid var(--sn-border-strong);
+}
+
+.md-typeset ul:has(> li > small) > li {
+  padding: 0.62em 0.5em;
+  border-bottom: 1px solid var(--sn-border);
+  border-radius: 0;
+}
+
+.md-typeset ul:has(> li > small) > li:hover {
+  background: var(--sn-hover);
+}
+
+.md-typeset ul:has(> li > small) > li > a {
+  color: var(--sn-text);
+}
+
+.md-typeset ul:has(> li > small) > li:hover > a {
+  color: var(--sn-accent);
+  text-decoration: none;
+}
+
+.md-typeset ul:has(> li > small) > li > small {
+  font-family: var(--sn-font-serif);
+  font-weight: 700;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--ft) 55%, transparent);
+  border-radius: 0.1rem;
+}
+
+/* ---------- 页脚 ---------- */
+.md-footer {
+  box-shadow: 0 -1px 0 var(--sn-border-strong), 0 -3px 0 var(--sn-bg), 0 -4px 0 var(--sn-border);
+}
+
+.md-footer__link {
+  opacity: 1;
+}
+
+.md-footer__title {
+  font-family: var(--sn-font-serif);
+}
+
+.md-footer__direction {
+  color: var(--sn-muted);
+}
+
+.md-footer-meta {
+  border-top: 1px solid var(--sn-border);
+}
+
+.md-copyright {
+  font-family: var(--sn-font-serif);
+}
+
+.md-footer-meta.md-typeset a {
+  color: var(--sn-muted);
+}
+
+.md-footer-meta.md-typeset a:hover {
+  color: var(--sn-accent);
+}
+
+/* ---------- 手机端 ---------- */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .hero__stats > div {
+    padding: 0 1.2rem;
+  }
+
+  .md-typeset .grid.cards.course-grid > ul > li {
+    grid-template-columns: 2.4rem 1fr;
+    padding-right: 0.2rem;
+  }
+
+  .md-typeset .grid.cards.course-grid > ul > li::before {
+    font-size: 1.3em;
+  }
+
+  .md-typeset .course-grid .course-title {
+    font-size: 1.15em;
+    letter-spacing: 0.02em;
+  }
+
+  .md-typeset .course-grid li > p:first-child::after {
+    min-width: 0.8rem;
+  }
+
+  .md-typeset .tips > div {
+    padding: 0.8rem 0.4rem;
+    border-top: 1px solid var(--sn-border);
+    border-left: 0;
+  }
+
+  .md-typeset .tips > div:first-child {
+    border-top: 0;
+  }
+}

@@ -1,27 +1,14 @@
-# 计算机系统 I
+# 计算机系统 I { .c-cs }
 
-本课程资料分类如下：
+共 **64** 份资料，分为 5 类。PDF 点击可在线预览，其余格式点击下载。
+{ .page-lead }
 
-<div class="grid cards" markdown>
+<div class="grid cards cat-grid" markdown>
 
-- __课件 PPT__（12 份）
-
-    [:octicons-arrow-right-24: 打开](slides.md)
-
-- __讲义__（9 份）
-
-    [:octicons-arrow-right-24: 打开](notes.md)
-
-- __期末复习讲义__（10 份）
-
-    [:octicons-arrow-right-24: 打开](final-review-notes.md)
-
-- __期末资料__（32 份）
-
-    [:octicons-arrow-right-24: 打开](final.md)
-
-- __教材__（1 份）
-
-    [:octicons-arrow-right-24: 打开](textbook.md)
+-   :material-presentation-play:{ .cat-icon } [课件 PPT](slides.md){ .cat-title } <span class="cat-count"><b>12</b> 份</span>
+-   :material-notebook-outline:{ .cat-icon } [讲义](notes.md){ .cat-title } <span class="cat-count"><b>9</b> 份</span>
+-   :material-book-open-page-variant-outline:{ .cat-icon } [期末复习讲义](final-review-notes.md){ .cat-title } <span class="cat-count"><b>10</b> 份</span>
+-   :material-folder-star-outline:{ .cat-icon } [期末资料](final.md){ .cat-title } <span class="cat-count"><b>32</b> 份</span>
+-   :material-bookshelf:{ .cat-icon } [教材](textbook.md){ .cat-title } <span class="cat-count"><b>1</b> 份</span>
 
 </div>
