@@ -17,7 +17,7 @@ hide:
 <div class="hero__stats">
   <div><b>5</b><span>门课程</span></div>
   <div><b>27</b><span>个分类</span></div>
-  <div><b>432</b><span>份资料</span></div>
+  <div><b>424</b><span>份资料</span></div>
 </div>
 
 </div>
@@ -46,11 +46,11 @@ hide:
     [期末 <b>2</b>](calculus/final.md)
     { .course-chips }
 
--   :material-graph:{ .course-icon .c-ds } [数据结构基础](data-structure/index.md){ .course-title } <span class="course-total"><b>141</b> 份资料</span>
+-   :material-graph:{ .course-icon .c-ds } [数据结构基础](data-structure/index.md){ .course-title } <span class="course-total"><b>133</b> 份资料</span>
 
     [课件 PPT <b>20</b>](data-structure/slides.md)
     [讲义 <b>10</b>](data-structure/notes.md)
-    [期中复习 <b>28</b>](data-structure/midterm.md)
+    [期中复习 <b>20</b>](data-structure/midterm.md)
     [期中真题 <b>9</b>](data-structure/midterm-exams.md)
     [期末真题 <b>70</b>](data-structure/final-exams.md)
     [课程要求 <b>4</b>](data-structure/syllabus.md)

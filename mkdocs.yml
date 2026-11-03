@@ -15,7 +15,7 @@ theme:
   language: zh
   # ----------------------------------------------------------
   # 深色 / 浅色模式切换（跟随系统，也可手动切换）
-  # 配色用 custom，具体颜色由 extra_css 里的主题文件决定
+  # 配色用 custom，具体颜色在 stylesheets/ink.css 里
   # ----------------------------------------------------------
   palette:
     # 浅色模式
@@ -105,8 +105,8 @@ extra_javascript:
   - javascripts/home.js     # 首页大搜索框
 
 extra_css:
-  - stylesheets/extra.css           # 所有方案共用的版式
-  - stylesheets/themes/ink.css      # 视觉方案：换方案只改这一行（ink / minimal / aurora / candy）
+  - stylesheets/extra.css     # 版式：布局、卡片、资料列表、响应式
+  - stylesheets/ink.css       # 「墨笺」风格：配色、字体、细节（含深色模式）
 
 copyright: © 2026 Sonder · 资料仅供学习交流
 
