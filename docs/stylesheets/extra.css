@@ -1,11 +1,76 @@
-/* 自定义样式：让正文更适合中文阅读 */
+/* ============================================================
+   所有视觉方案共用的版式：结构、布局、响应式
+   颜色、字体风格、圆角、阴影等在 themes/*.css 里定义
+   ============================================================ */
 
-/* 使用系统自带字体（mkdocs.yml 里 font: false，不再从 Google Fonts 加载）：
-   英文和数字用系统 UI 字体，中文依次回退到苹方、冬青黑体、微软雅黑、思源黑体 */
+/* ---------- 字体与通用变量 ---------- */
 :root {
-  --md-text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+  /* 只用系统字体（mkdocs.yml 里 font: false），国内打开不卡
+     英文数字用系统 UI 字体，中文依次回退到苹方、冬青黑体、微软雅黑、思源黑体 */
+  --sn-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
-  --md-code-font: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  /* 衬线（宋体）：英文用 Iowan / Palatino / Georgia，中文用思源宋体、宋体 */
+  --sn-font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Noto Serif SC",
+    "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif;
+  --sn-font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --md-text-font: var(--sn-font-sans);
+  --md-code-font: var(--sn-font-mono);
+
+  /* 主题文件可覆盖的默认值 */
+  --sn-radius: 0.6rem;
+  --sn-radius-sm: 0.4rem;
+
+  /* 五门课程的代表色 */
+  --c-physics: #3b82f6;
+  --c-calculus: #8b5cf6;
+  --c-ds: #10b981;
+  --c-discrete: #f59e0b;
+  --c-cs: #ef4444;
+
+  /* 文件类型颜色 */
+  --ft-pdf: #e5484d;
+  --ft-ppt: #f0700f;
+  --ft-doc: #2b6cd9;
+  --ft-img: #2f9e66;
+  --ft-web: #8e4ec6;
+  --ft-md: #0d9488;
+  --ft-file: #8b8d98;
+
+  /* 文件类型图标（取自 Material Design Icons），用作 mask */
+  --i-pdf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z'/%3E%3C/svg%3E");
+  --i-ppt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.8 13.4h2.5c1.5 0 2.16-.28 2.8-.82.64-.55.9-1.33.9-2.35 0-.97-.25-1.73-.9-2.35-.65-.59-1.27-.88-2.8-.88H8v10h1.8zM19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-9.2 9V8.4h2.3c.66 0 1.17.25 1.5.6s.5.72.5 1.24c0 .56-.18.95-.5 1.26s-.7.5-1.38.5z'/%3E%3C/svg%3E");
+  --i-doc: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 17H14l-2-7.5-2 7.5H8.5L6.1 7h1.7l1.54 7.5L11.3 7h1.4l1.97 7.5L16.2 7h1.7M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2'/%3E%3C/svg%3E");
+  --i-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-1-7v6H7l5-5 2 2m-4-5.5A1.5 1.5 0 0 1 8.5 12 1.5 1.5 0 0 1 7 10.5 1.5 1.5 0 0 1 8.5 9a1.5 1.5 0 0 1 1.5 1.5'/%3E%3C/svg%3E");
+  --i-web: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2'/%3E%3C/svg%3E");
+  --i-md: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.56 18H3.44C2.65 18 2 17.37 2 16.59V7.41C2 6.63 2.65 6 3.44 6h17.12c.79 0 1.44.63 1.44 1.41v9.18c0 .78-.65 1.41-1.44 1.41M3.44 6.94c-.26 0-.48.21-.48.47v9.19c0 .25.22.46.48.46h17.12c.26 0 .48-.21.48-.46V7.41c0-.26-.22-.47-.48-.47zm1.45 8.25V8.81h1.92l1.92 2.35 1.92-2.35h1.93v6.38h-1.93v-3.66l-1.92 2.35-1.92-2.35v3.66zm12.01 0-2.9-3.1h1.94V8.81h1.92v3.28h1.93z'/%3E%3C/svg%3E");
+  --i-file: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm4 18H6V4h7v5h5z'/%3E%3C/svg%3E");
+  --i-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z'/%3E%3C/svg%3E");
+  --i-arrow-ne: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z'/%3E%3C/svg%3E");
+}
+
+/* 默认的「当前课程色」= 主题强调色；在课程卡片和课程页面里换成该课程的颜色 */
+[data-md-color-scheme] {
+  --course: var(--sn-accent);
+}
+.md-content:has(h1.c-physics),
+.md-typeset .course-grid > ul > li:has(.c-physics) { --course: var(--c-physics); }
+.md-content:has(h1.c-calculus),
+.md-typeset .course-grid > ul > li:has(.c-calculus) { --course: var(--c-calculus); }
+.md-content:has(h1.c-ds),
+.md-typeset .course-grid > ul > li:has(.c-ds) { --course: var(--c-ds); }
+.md-content:has(h1.c-discrete),
+.md-typeset .course-grid > ul > li:has(.c-discrete) { --course: var(--c-discrete); }
+.md-content:has(h1.c-cs),
+.md-typeset .course-grid > ul > li:has(.c-cs) { --course: var(--c-cs); }
+
+/* ---------- 通用排版 ---------- */
+::selection {
+  background-color: color-mix(in srgb, var(--sn-accent) 24%, transparent);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 正文行高稍微放大，中文阅读更舒适 */
@@ -13,8 +78,487 @@
   line-height: 1.75;
 }
 
+/* 标题和导语自动均衡断行，避免最后一行只剩一两个字；
+   中文只在标点和空格处换行，不把「课件」这样的词拆开（实在放不下才强制断开） */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset .hero__lead {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.md-typeset p {
+  text-wrap: pretty;
+}
+
 /* 行间数学公式可横向滚动，避免长公式溢出 */
 .md-typeset .arithmatex {
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+/* 标题下方的说明行（「共 N 份资料…」） */
+.md-typeset .page-lead {
+  margin: -0.9em 0 1.8em;
+  color: var(--sn-muted);
+}
+
+.md-typeset .section-note {
+  margin: -0.5em 0 1.2em;
+  font-size: 0.85em;
+  color: var(--sn-muted);
+}
+
+.md-typeset .scope-note {
+  margin-top: 1.2em;
+  font-size: 0.85em;
+  color: var(--sn-muted);
+}
+
+/* ============================================================
+   首页 Hero
+   ============================================================ */
+.md-typeset .hero {
+  position: relative;
+  margin: 0 0 3.2rem;
+}
+
+.md-typeset .hero__eyebrow {
+  margin: 0 0 0.9rem;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sn-muted);
+}
+
+.md-typeset h1.hero__title {
+  margin: 0;
+  font-size: clamp(2.1em, 5.5vw, 3.4em);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--sn-text);
+}
+
+.md-typeset .hero__title .headerlink {
+  display: none;
+}
+
+.md-typeset .hero__lead {
+  max-width: 34em;
+  margin: 1.1rem 0 0;
+  font-size: 1.05em;
+  color: var(--sn-muted);
+}
+
+/* 假的搜索框：点一下打开站内搜索 */
+.md-typeset .hero__search {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  gap: 0.6em;
+  max-width: 30rem;
+  margin-top: 1.8rem;
+  padding: 0.75em 1em;
+  color: var(--sn-muted);
+  cursor: text;
+  user-select: none;
+  background: var(--sn-surface);
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .hero__search:hover {
+  border-color: var(--sn-accent);
+}
+
+.md-typeset .hero__search .twemoji,
+.md-typeset .hero__search .twemoji svg {
+  width: 1.25em;
+  height: 1.25em;
+  max-height: none;
+}
+
+.md-typeset .hero__search span:not(.twemoji) {
+  flex: 1;
+}
+
+.md-typeset .hero__search kbd {
+  font-size: 0.75em;
+}
+
+.md-typeset .hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 2.4rem;
+  margin-top: 2rem;
+}
+
+.md-typeset .hero__stats > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.md-typeset .hero__stats b {
+  font-size: 1.75em;
+  line-height: 1.2;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--sn-text);
+}
+
+.md-typeset .hero__stats span {
+  font-size: 0.8em;
+  color: var(--sn-muted);
+}
+
+/* ============================================================
+   首页课程卡片
+   ============================================================ */
+.md-typeset .grid.cards.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.md-typeset .grid.cards.course-grid > ul {
+  display: contents;
+}
+
+/* 主题把卡片改成普通列表时，去掉 ul 的默认缩进 */
+[dir] .md-typeset .grid.cards > ul {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.md-typeset .grid.cards.course-grid > ul > li {
+  position: relative;
+  display: flex;
+  flex: 1 1 17rem;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.2rem 1.25rem;
+  background: var(--sn-surface);
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius);
+  transition: border-color 0.2s, box-shadow 0.25s, transform 0.25s;
+}
+
+/* 第一行：图标 + 资料数；第二行：课程名 */
+.md-typeset .course-grid li > p:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "icon total"
+    "title title";
+  align-items: center;
+  gap: 0.9rem 0.6rem;
+  margin: 0;
+}
+
+.md-typeset .course-grid .course-icon {
+  grid-area: icon;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  color: var(--course);
+  background: color-mix(in srgb, var(--course) 13%, transparent);
+  border-radius: var(--sn-radius-sm);
+}
+
+.md-typeset .course-grid .course-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  max-height: none;
+}
+
+.md-typeset .course-grid .course-title {
+  grid-area: title;
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--sn-text);
+}
+
+/* 整张卡片都可点击（链接的伪元素铺满卡片） */
+.md-typeset .course-grid .course-title::after,
+.md-typeset .cat-grid .cat-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.md-typeset .course-grid .course-total {
+  grid-area: total;
+  justify-self: end;
+  font-size: 0.8em;
+  color: var(--sn-muted);
+  white-space: nowrap;
+}
+
+.md-typeset .course-grid .course-total b {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: var(--sn-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 分类直达链接 */
+.md-typeset .course-chips {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: auto 0 0;
+}
+
+.md-typeset .course-chips a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.15em 0.7em;
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--sn-muted);
+  border: 1px solid var(--sn-border);
+  border-radius: 99px;
+  transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+}
+
+.md-typeset .course-chips a b {
+  font-weight: 600;
+  color: var(--sn-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .course-chips a:hover,
+.md-typeset .course-chips a:focus-visible {
+  color: var(--course);
+  border-color: var(--course);
+}
+
+/* ============================================================
+   课程页的分类卡片
+   ============================================================ */
+.md-typeset .grid.cards.cat-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 0.8rem;
+}
+
+.md-typeset .grid.cards.cat-grid > ul > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: var(--sn-surface);
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius);
+  transition: border-color 0.2s, box-shadow 0.25s, transform 0.25s;
+}
+
+.md-typeset .cat-grid .cat-icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--course);
+  background: color-mix(in srgb, var(--course) 13%, transparent);
+  border-radius: var(--sn-radius-sm);
+}
+
+.md-typeset .cat-grid .cat-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  max-height: none;
+}
+
+.md-typeset .cat-grid .cat-title {
+  flex: 1;
+  font-weight: 600;
+  color: var(--sn-text);
+}
+
+.md-typeset .cat-grid .cat-count {
+  font-size: 0.85em;
+  color: var(--sn-muted);
+  white-space: nowrap;
+}
+
+.md-typeset .cat-grid .cat-count b {
+  font-size: 1.1em;
+  color: var(--sn-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   首页「使用说明」
+   ============================================================ */
+.md-typeset .grid.tips {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 0.8rem;
+}
+
+.md-typeset .tips > div {
+  padding: 1rem 1.1rem;
+  background: var(--sn-surface);
+  border: 1px solid var(--sn-border);
+  border-radius: var(--sn-radius);
+}
+
+.md-typeset .tips > div > p {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 0.8rem;
+  margin: 0;
+  font-size: 0.85em;
+  line-height: 1.6;
+  color: var(--sn-muted);
+}
+
+.md-typeset .tips .tip-icon {
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--sn-accent);
+  background: color-mix(in srgb, var(--sn-accent) 12%, transparent);
+  border-radius: var(--sn-radius-sm);
+}
+
+.md-typeset .tips .tip-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  max-height: none;
+}
+
+.md-typeset .tips strong {
+  font-size: 1.1em;
+  color: var(--sn-text);
+}
+
+/* ============================================================
+   资料列表：每一行带文件类型图标，右侧是类型标签
+   （列表项里有 <small>类型</small> 的才算资料列表）
+   ============================================================ */
+.md-typeset ul:has(> li > small) {
+  padding: 0;
+  list-style: none;
+}
+
+/* 去掉 Material 默认的列表缩进（它的选择器带 [dir=ltr]，权重更高） */
+[dir] .md-typeset ul:has(> li > small),
+[dir] .md-typeset ul:has(> li > small) > li {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.md-typeset ul:has(> li > small) > li {
+  --ft: var(--ft-file);
+  --ft-icon: var(--i-file);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  margin: 0;
+  padding: 0.55em 0.75em;
+  border-radius: var(--sn-radius-sm);
+  transition: background-color 0.15s;
+}
+
+.md-typeset ul:has(> li > small) > li::before {
+  content: "";
+  flex: none;
+  width: 1.3em;
+  height: 1.3em;
+  background-color: var(--ft);
+  -webkit-mask: var(--ft-icon) center / contain no-repeat;
+  mask: var(--ft-icon) center / contain no-repeat;
+}
+
+.md-typeset ul:has(> li > small) > li > a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* 整行可点 */
+.md-typeset ul:has(> li > small) > li > a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.md-typeset ul:has(> li > small) > li > small {
+  flex: none;
+  margin-left: auto;
+  padding: 0.1em 0.6em;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ft);
+  background: color-mix(in srgb, var(--ft) 12%, transparent);
+  border-radius: 0.25rem;
+}
+
+.md-typeset li:has(> a[href$=".pdf" i]) { --ft: var(--ft-pdf); --ft-icon: var(--i-pdf); }
+.md-typeset li:has(> a[href$=".ppt" i], > a[href$=".pptx" i]) { --ft: var(--ft-ppt); --ft-icon: var(--i-ppt); }
+.md-typeset li:has(> a[href$=".doc" i], > a[href$=".docx" i]) { --ft: var(--ft-doc); --ft-icon: var(--i-doc); }
+.md-typeset li:has(> a[href$=".png" i], > a[href$=".jpg" i], > a[href$=".jpeg" i], > a[href$=".webp" i], > a[href$=".gif" i]) { --ft: var(--ft-img); --ft-icon: var(--i-img); }
+.md-typeset li:has(> a[href$=".html" i], > a[href$=".htm" i]) { --ft: var(--ft-web); --ft-icon: var(--i-web); }
+/* .md 资料会被构建成网页，链接以 / 结尾 */
+.md-typeset li:has(> a[href$="/"]) { --ft: var(--ft-md); --ft-icon: var(--i-md); }
+
+/* ============================================================
+   手机端
+   ============================================================ */
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .hero {
+    margin-bottom: 2.4rem;
+  }
+
+  .md-typeset .hero__search kbd {
+    display: none;
+  }
+
+  .md-typeset .hero__stats {
+    gap: 0.6rem 1.6rem;
+  }
+
+  .md-typeset .grid.cards.course-grid > ul > li {
+    flex-basis: 100%;
+  }
+
+  /* 手机上图标、课程名、数量放在同一行，卡片更紧凑 */
+  .md-typeset .course-grid li > p:first-child {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "icon title total";
+  }
+
+  .md-typeset ul:has(> li > small) > li {
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+  }
+}
+
+/* 系统设置了「减少动态效果」时，卡片不做位移动画 */
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset ul:has(> li > small) > li {
+    transition: none;
+    transform: none !important;
+  }
 }

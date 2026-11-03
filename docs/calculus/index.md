@@ -1,27 +1,14 @@
-# 微积分（甲）Ⅱ
+# 微积分（甲）Ⅱ { .c-calculus }
 
-本课程资料分类如下：
+共 **49** 份资料，分为 5 类。PDF 点击可在线预览，其余格式点击下载。
+{ .page-lead }
 
-<div class="grid cards" markdown>
+<div class="grid cards cat-grid" markdown>
 
-- __课件 PPT__（30 份）
-
-    [:octicons-arrow-right-24: 打开](slides.md)
-
-- __讲义__（6 份）
-
-    [:octicons-arrow-right-24: 打开](notes.md)
-
-- __习题解答__（9 份）
-
-    [:octicons-arrow-right-24: 打开](exercises.md)
-
-- __期中__（2 份）
-
-    [:octicons-arrow-right-24: 打开](midterm.md)
-
-- __期末__（2 份）
-
-    [:octicons-arrow-right-24: 打开](final.md)
+-   :material-presentation-play:{ .cat-icon } [课件 PPT](slides.md){ .cat-title } <span class="cat-count"><b>30</b> 份</span>
+-   :material-notebook-outline:{ .cat-icon } [讲义](notes.md){ .cat-title } <span class="cat-count"><b>6</b> 份</span>
+-   :material-lightbulb-on-outline:{ .cat-icon } [习题解答](exercises.md){ .cat-title } <span class="cat-count"><b>9</b> 份</span>
+-   :material-file-document-edit-outline:{ .cat-icon } [期中](midterm.md){ .cat-title } <span class="cat-count"><b>2</b> 份</span>
+-   :material-file-document-edit-outline:{ .cat-icon } [期末](final.md){ .cat-title } <span class="cat-count"><b>2</b> 份</span>
 
 </div>

@@ -1,31 +1,15 @@
-# 离散数学及其应用
+# 离散数学及其应用 { .c-discrete }
 
-本课程资料分类如下：
+共 **141** 份资料，分为 6 类。PDF 点击可在线预览，其余格式点击下载。
+{ .page-lead }
 
-<div class="grid cards" markdown>
+<div class="grid cards cat-grid" markdown>
 
-- __课件 PPT__（54 份）
-
-    [:octicons-arrow-right-24: 打开](slides.md)
-
-- __复习讲义__（13 份）
-
-    [:octicons-arrow-right-24: 打开](notes.md)
-
-- __历年卷__（44 份）
-
-    [:octicons-arrow-right-24: 打开](past-papers.md)
-
-- __期中__（18 份）
-
-    [:octicons-arrow-right-24: 打开](midterm.md)
-
-- __期末复习__（1 份）
-
-    [:octicons-arrow-right-24: 打开](final-review.md)
-
-- __朋辈辅导__（11 份）
-
-    [:octicons-arrow-right-24: 打开](peer.md)
+-   :material-presentation-play:{ .cat-icon } [课件 PPT](slides.md){ .cat-title } <span class="cat-count"><b>54</b> 份</span>
+-   :material-notebook-outline:{ .cat-icon } [复习讲义](notes.md){ .cat-title } <span class="cat-count"><b>13</b> 份</span>
+-   :material-file-document-edit-outline:{ .cat-icon } [历年卷](past-papers.md){ .cat-title } <span class="cat-count"><b>44</b> 份</span>
+-   :material-file-document-edit-outline:{ .cat-icon } [期中](midterm.md){ .cat-title } <span class="cat-count"><b>18</b> 份</span>
+-   :material-book-open-page-variant-outline:{ .cat-icon } [期末复习](final-review.md){ .cat-title } <span class="cat-count"><b>1</b> 份</span>
+-   :material-account-group-outline:{ .cat-icon } [朋辈辅导](peer.md){ .cat-title } <span class="cat-count"><b>11</b> 份</span>
 
 </div>

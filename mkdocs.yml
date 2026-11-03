@@ -14,27 +14,33 @@ theme:
   name: material
   language: zh
   # ----------------------------------------------------------
-  # 深色 / 浅色模式切换，主色调为蓝色
+  # 深色 / 浅色模式切换（跟随系统，也可手动切换）
+  # 配色用 custom，具体颜色由 extra_css 里的主题文件决定
   # ----------------------------------------------------------
   palette:
     # 浅色模式
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue
-      accent: blue
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: 切换到深色模式
     # 深色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
-      accent: blue
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: 切换到浅色模式
+  icon:
+    logo: material/notebook-edit-outline   # 左上角图标
   features:
+    - navigation.tabs          # 顶部课程标签栏
     - navigation.sections      # 左侧导航分区
+    - navigation.path          # 页面标题上方的面包屑
+    - navigation.footer        # 页面底部「上一页 / 下一页」
     - navigation.top           # 返回顶部按钮
     - navigation.tracking      # URL 随滚动更新到当前章节
     - navigation.indexes       # 允许分区带索引页
@@ -96,9 +102,20 @@ markdown_extensions:
 # ============================================================
 extra_javascript:
   - javascripts/mathjax.js
+  - javascripts/home.js     # 首页大搜索框
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra.css           # 所有方案共用的版式
+  - stylesheets/themes/ink.css      # 视觉方案：换方案只改这一行（ink / minimal / aurora / candy）
+
+copyright: © 2026 Sonder · 资料仅供学习交流
+
+extra:
+  generator: false   # 页脚不显示「Made with Material for MkDocs」
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sonderzhiming-arch/my-notes
+      name: GitHub 仓库
 
 # files/ 里的 Markdown 是资料本身（从各列表页链接过去），不需要出现在左侧导航
 not_in_nav: |

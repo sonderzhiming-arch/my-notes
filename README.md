@@ -27,6 +27,13 @@ mkdocs serve                  # 启动本地服务器
 2. 在 `mkdocs.yml` 的 `nav` 中登记该文件；
 3. 保存后 `mkdocs serve` 会自动热更新。
 
+资料列表的每一行写成 `- [文件名](files/xxx.pdf) <small>PDF</small>`，就会自动带上文件类型图标和标签。
+
+## 切换视觉方案
+
+`docs/stylesheets/themes/` 里有 4 套方案：`ink`（墨笺 · 书卷）、`minimal`（素白 · 极简）、`aurora`（星河 · 科技）、`candy`（糖果 · 活泼）。
+把 `mkdocs.yml` 里 `extra_css` 的 `stylesheets/themes/ink.css` 换成想要的文件名即可。
+
 ## 部署
 
 push 到 `main` 分支后，GitHub Actions 会自动构建并部署到 GitHub Pages。
